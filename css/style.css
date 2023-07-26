@@ -17,7 +17,9 @@
     --e-global-typography-accent-font-weight: 500;
 }
 
-
+ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before{
+    content: ''!important;
+}
 body {
     width: 100%;
     overflow-x: hidden;
@@ -1325,7 +1327,8 @@ p {
     } */
 
     .img-w {
-        width: 99%;
+        padding-left: 15px;
+        width: 100%;
         height: 300px;
     }
 
@@ -1403,9 +1406,16 @@ p {
     .input-h{
         width: 100%;
     }
+    .footer1{
+      min-width: 409px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1400px) {
+
+    .footer1{
+        width: 100vw;
+    }
     .baivietlienquan {
         display: grid !important;
         grid-template-columns: 1fr 1fr 1fr !important;
@@ -1415,6 +1425,10 @@ p {
         display: grid !important;
         grid-template-columns: 1fr 1fr!important;
         margin: 0 auto;
+    }
+    .img-w{
+        width: 600px;
+        height: 400px;
     }
     
 }
