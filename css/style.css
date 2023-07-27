@@ -17,9 +17,10 @@
     --e-global-typography-accent-font-weight: 500;
 }
 
-ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before{
-    content: ''!important;
+ol.elementor-toc__list-wrapper .elementor-toc__list-item-text-wrapper:before {
+    content: '' !important;
 }
+
 body {
     width: 100%;
     overflow-x: hidden;
@@ -50,6 +51,11 @@ body {
 
 .elementor-element {
     --widgets-spacing: 15px;
+}
+
+.elementor-container1 {
+    display: flex;
+    align-items: center;
 }
 
 .elementor-element,
@@ -173,7 +179,9 @@ body {
     width: 100%;
 }
 
-
+.fix-li {
+    list-style: none!important;
+}
 
 .elementor-column {
     position: relative;
@@ -191,14 +199,29 @@ body {
     background-color: #027BB0;
 }
 
+.img-logo {
+    width: 30%;
+}
+
 .elementor-widget-wrap>.elementor-element {
     width: 100%;
+}
+
+.left-1 {
+    width: 30% !important;
+}
+
+@media (min-width: 768px) {
+    .header-m {
+        width: 90% !important;
+    }
 }
 
 @media (min-width: 768px) {
     .elementor-812 .elementor-element.elementor-element-9e756c9 {
         width: 80%;
     }
+
 }
 
 .elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap {
@@ -1212,13 +1235,7 @@ p {
         width: 50%;
     }
 
-    .fix {
-        width: 400px;
-        /* Chiều rộng cố định */
-        max-width: 400px;
-        /* Đảm bảo màn cứng không kéo qua trái/phải */
-        margin: 0 auto;
-    }
+
 
     .header-m {
         display: none;
@@ -1381,59 +1398,179 @@ p {
     .ketnoi {
         width: 200px;
     }
-    .list-arti{
-        display: grid !important;
-        grid-template-columns: 1fr!important;
-        margin: 0 auto;
-    }
-    .grid-2{
+
+    .list-arti {
         display: grid !important;
         grid-template-columns: 1fr !important;
         margin: 0 auto;
     }
-    .fix-w{
-        width: 80%!important;
+
+    .grid-2 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        margin: 0 auto;
     }
-    .img-m{
-        width: 100%!important;
+
+    .fix-w {
+        width: 80% !important;
     }
-    .grid-3{
-        width: 370px!important;
+
+    .img-m {
+        width: 100% !important;
     }
-    .input-t{
-        width: 50%!important;
+
+    .grid-3 {
+        width: 370px !important;
     }
-    .input-h{
+
+    .input-t {
+        width: 50% !important;
+    }
+
+    .input-h {
         width: 100%;
     }
-    .footer1{
 
-      min-width: 102%;
+    .footer1 {
+
+        min-width: 102%;
     }
+}
+
+.footer-1 {
+    display: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1400px) {
 
-    .footer1{
-        margin: 0 auto;
-        width: 1000px!important;
+
+    .elementor-post-info {
+        width: 300px !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
+
+    .fix {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .footer {
+        width: 100%;
+        display: none;
+    }
+
+    .footer-1 {
+        
+        display: block;
+    }
+
+    .footer1 {
+        margin: 0 auto;
+        width: 1000px !important;
+    }
+
     .baivietlienquan {
         display: grid !important;
         grid-template-columns: 1fr 1fr 1fr !important;
         margin: 0 auto;
     }
-    .list-arti{
+
+    .list-arti {
         display: grid !important;
-        grid-template-columns: 1fr 1fr!important;
+        grid-template-columns: 1fr 1fr !important;
         margin: 0 auto;
     }
-    .img-w{
-        width: 600px;
+
+    .img-w {
+        width: 300px;
         height: 400px;
     }
-    
+
+    .footer-1 {
+        width: 100% !important;
+    }
+
 }
+
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+   
+    .footer-1 {
+        display: block;
+    }
+    .baivietlq {
+        padding-top: -100px !important;
+    }
+
+    .elementor-post-info {
+        width: 300px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .elementor-element ul.elementor-icon-list-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elementor-element {
+        width: 100%;
+    }
+
+    .elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+
+    .img-w {
+        width: 250px;
+        height: 250px;
+    }
+
+    .text-p {
+        width: 200px;
+        word-wrap: break-word;
+    }
+
+    .baivietlq {
+        width: 95% !important;
+    }
+
+    .footer-1 {
+        width: 100% !important;
+    }
+
+    .fix {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 400px) {
+    #map{
+        width: 200px!important;
+        height: 200px!important;
+    }
+    .footer-1 {
+        display: block;
+    }
+    .footer-1 {
+        width: 410px !important;
+    }
+    .hamburger-btn {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right:1%!important;
+    }
+}
+
 
 @media screen and (min-width: 1024px) {
     .phone {
@@ -1442,6 +1579,11 @@ p {
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .img-w {
+        width: 80%;
+    }
+}
 
 
 .elementor-element,
@@ -1463,9 +1605,11 @@ p {
         width: 100%;
     }
 }
+
 .elementor-2828 .elementor-element.elementor-element-201c8f0 {
     text-align: center;
 }
+
 .elementor-widget-wrap>.elementor-element {
     width: 100%;
 }
@@ -1475,3 +1619,162 @@ p {
 }
 
 
+
+
+
+
+    /* CSS cho nút "hamburger" và các hiệu ứng liên quan */
+    .hamburger-btn {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right:15%;
+      z-index: 9999;
+      width: 30px;
+      height: 20px;
+      background-color: transparent;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #000;
+      border-radius: 3px;
+      transition: transform 0.3s ease;
+    }
+    .main-nav {
+      /* ... Rest of the CSS ... */
+      display: none!important; /* Set default display to none */
+      transition: transform 1s ease;
+    }
+    .main-nav.active {
+      display: flex!important; /* Show the navigation menu when 'active' class is present */
+      opacity: 1; /* Fade-in effect */
+      transform: translateX(0); /* Slide-down effect */
+    }
+    .main-nav:not(.active) {
+      transform: translateX(100%);
+    }
+    .hamburger-btn span:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger-btn span:nth-child(2), .hamburger-btn span:nth-child(3) {
+      top: 50%;
+    }
+
+    .hamburger-btn span:nth-child(2) {
+      transform: translateY(-8px);
+    }
+
+    .hamburger-btn span:nth-child(3) {
+      transform: translateY(8px);
+    }
+
+    /* CSS cho hiển thị nút "hamburger" khi độ rộng màn hình từ 756px trở xuống */
+    @media (max-width: 756px) {
+      .hamburger-btn {
+        display: block;
+      }
+      
+
+      .main-nav {
+     
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+
+     
+    }
+
+    /* CSS cho Nav và các hiệu ứng liên quan */
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-nav.nav-open {
+      justify-content: flex-start; /* Đổi giá trị 'justify-content' thành 'flex-start' khi danh mục con mở ra */
+    }
+
+    .main-nav .nav-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-nav .nav-list li {
+      position: relative;
+    }
+
+    .main-nav .nav-list li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    .main-nav .nav-list li .fa-chevron-down {
+      transition: transform 0.3s ease;
+    }
+
+    .main-nav .nav-list li.has-sub-nav.active .fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    /* CSS cho danh mục con */
+    .main-nav .nav-list li .sub-nav {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateX(-50%);
+      background-color: #444;
+      padding: 0;
+      margin: 0;
+      width: 70%;
+      max-width: 400px;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
+      max-height: 200px; /* Đặt max-height để hiển thị nội dung danh mục con và xuất hiện thanh cuộn */
+      overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá max-height */
+    }
+
+    .main-nav .nav-list li .sub-nav li {
+      display: block;
+    }
+
+    .main-nav .nav-list li .sub-nav li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    .main-nav .nav-list li .sub-nav li a:hover {
+      background-color: #555;
+    }
+
+    /* Hiển thị danh mục con khi danh mục cha có class 'active' */
+    .main-nav .nav-list li.has-sub-nav.active .sub-nav {
+        max-height: 300px;
+        width: 140%;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Đẩy "Liên hệ" xuống dưới danh sách con "Danh mục" */
+    .main-nav .nav-list li:nth-child(2) {
+      order: 2;
+    }
