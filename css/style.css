@@ -1407,14 +1407,16 @@ p {
         width: 100%;
     }
     .footer1{
-      min-width: 409px;
+
+      min-width: 102%;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1400px) {
 
     .footer1{
-        width: 100vw;
+        margin: 0 auto;
+        width: 1000px!important;
     }
     .baivietlienquan {
         display: grid !important;
