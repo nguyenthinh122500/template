@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation with Toggle</title>
+  <!-- Thêm thư viện Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+   
+
+    /* CSS cho nút "hamburger" và các hiệu ứng liên quan */
+    .hamburger-btn {
+      display: none;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      width: 30px;
+      height: 20px;
+      background-color: transparent;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #000;
+      border-radius: 3px;
+      transition: transform 0.3s ease;
+    }
+    .main-nav {
+      /* ... Rest of the CSS ... */
+      display: none!important; /* Set default display to none */
+      transition: transform 1s ease;
+    }
+    .main-nav.active {
+      display: flex!important; /* Show the navigation menu when 'active' class is present */
+      opacity: 1; /* Fade-in effect */
+      transform: translateX(0); /* Slide-down effect */
+    }
+    .main-nav:not(.active) {
+      transform: translateX(100%);
+    }
+    .hamburger-btn span:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger-btn span:nth-child(2), .hamburger-btn span:nth-child(3) {
+      top: 50%;
+    }
+
+    .hamburger-btn span:nth-child(2) {
+      transform: translateY(-8px);
+    }
+
+    .hamburger-btn span:nth-child(3) {
+      transform: translateY(8px);
+    }
+
+    /* CSS cho hiển thị nút "hamburger" khi độ rộng màn hình từ 756px trở xuống */
+    @media (max-width: 756px) {
+      .hamburger-btn {
+        display: block;
+      }
+      
+
+      .main-nav {
+     
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+
+     
+    }
+
+    /* CSS cho Nav và các hiệu ứng liên quan */
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-nav.nav-open {
+      justify-content: flex-start; /* Đổi giá trị 'justify-content' thành 'flex-start' khi danh mục con mở ra */
+    }
+
+    .main-nav .nav-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-nav .nav-list li {
+      position: relative;
+    }
+
+    .main-nav .nav-list li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    .main-nav .nav-list li .fa-chevron-down {
+      transition: transform 0.3s ease;
+    }
+
+    .main-nav .nav-list li.has-sub-nav.active .fa-chevron-down {
+      transform: rotate(180deg);
+    }
+
+    /* CSS cho danh mục con */
+    .main-nav .nav-list li .sub-nav {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateX(-50%);
+      background-color: #444;
+      padding: 0;
+      margin: 0;
+      width: 70%;
+      max-width: 400px;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s, transform 0.3s;
+      max-height: 200px; /* Đặt max-height để hiển thị nội dung danh mục con và xuất hiện thanh cuộn */
+      overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá max-height */
+    }
+
+    .main-nav .nav-list li .sub-nav li {
+      display: block;
+    }
+
+    .main-nav .nav-list li .sub-nav li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    .main-nav .nav-list li .sub-nav li a:hover {
+      background-color: #555;
+    }
+
+    /* Hiển thị danh mục con khi danh mục cha có class 'active' */
+    .main-nav .nav-list li.has-sub-nav.active .sub-nav {
+        max-height: 300px;
+        width: 140%;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Đẩy "Liên hệ" xuống dưới danh sách con "Danh mục" */
+    .main-nav .nav-list li:nth-child(2) {
+      order: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- Nút bấm xuất hiện bên phải trên cùng màn hình -->
+  <div class="hamburger-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Nav -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li class="has-sub-nav">
+        <a href="#">Danh mục <i class="fas fa-chevron-down"></i></a>
+        <ul class="sub-nav">
+          <li><a href="#">Danh mục 1 ung ho teewe aewlkeaoha</a></li>
+          <li><a href="#">Danh mục 1 ung ho teewe aewlkeaoha</a></li>
+          <li><a href="#">Danh mục 1 ung ho teewe aewlkeaoha</a></li>
+          <li><a href="#">Danh mục 1 ung ho teewe aewlkeaoha</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 2</a></li>
+          <li><a href="#">Danh mục 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // JavaScript để xử lý sự kiện khi click vào danh mục
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const mainNav = document.querySelector('.main-nav');
+
+    hamburgerBtn.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+    });
+    const hasSubNav = document.querySelector('.has-sub-nav');
+
+    hasSubNav.addEventListener('click', function() {
+      this.classList.toggle('active');
+      mainNav.classList.toggle('nav-open'); /* Thêm/xóa class 'nav-open' khi danh mục con được mở ra/ẩn đi */
+    });
+    
+  </script>
+</body>
+</html>
